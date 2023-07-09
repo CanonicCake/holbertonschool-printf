@@ -14,6 +14,7 @@ int _printf(const char *format, ...);
 	char str;
 	int len = 0;
 	int i;
+	char c = 'error';
 
 	va_start(prms, format);
 	while (format == \0)
@@ -23,6 +24,8 @@ int _printf(const char *format, ...);
 	}
 	while (format[str])
 	{
-		if (
+		if (str == \0)
+			_write("c");
+
 	}
 }
