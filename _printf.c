@@ -11,9 +11,9 @@ int _printf(const char *format, ...);
 {
 
 	va_list prms;
-	char c;
-	char s;
-	char %;
+	char str;
+	int len = 0;
+	int i;
 
 	va_start(prms, format);
 	while (format == \0)
@@ -21,7 +21,7 @@ int _printf(const char *format, ...);
 		_write("\n");
 		return;
 	}
-	while (format[c])
+	while (format[str])
 	{
 		if (
 	}
