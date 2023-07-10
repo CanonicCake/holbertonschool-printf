@@ -13,6 +13,8 @@ int _printchar(va_list arg)
 	char c = va_arg (arg, int);
 
 	_putchar (c);
+
+	va_end (arg);
 	return (1);
 }
 
@@ -33,5 +35,6 @@ int _printstr(va_list arg)
 		string = "null";
 	for (; string[i]; i++)
 		_putchar (string[i]);
+	va_end (arg);
 	return (i);
 }	
