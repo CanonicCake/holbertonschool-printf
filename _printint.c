@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
+#include "main.h"
 
 /**
  * printint - prints an interager
@@ -7,7 +7,7 @@
  * Return: number to be printed
  */
 
-int _printint(va_list arg);
+int _printint(va_list arg)
 {
 	int n = va_arg(arg, int);
 	int cont = 1;
