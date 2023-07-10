@@ -9,7 +9,7 @@
 
 int _printint(va_list ap)
 {
-	int n = va_arg(arg, int);
+	int n = va_arg(ap, int);
 	int cont = 1;
 	unsigned int num;
 
