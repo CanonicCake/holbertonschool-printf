@@ -32,6 +32,6 @@ int _printstr(va_list arg)
 	if (string == NULL)
 		string = "null";
 	for (; string[i]; i++)
-		_putchar (string[i])
+		_putchar (string[i]);
 	return (i);
 }	
