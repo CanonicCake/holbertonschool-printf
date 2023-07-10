@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdarg.h>
+
 /**
  * _printf - prints output based on format
  * @format: format specifier

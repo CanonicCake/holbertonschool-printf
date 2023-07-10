@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdarg.h>
+
 /**
  * printint - prints an interager
  * @ard: number to be printed
