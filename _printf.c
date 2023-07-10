@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#inlcude "main.h"
+#include "main.h"
 
 /**
  * _printf - prints output based on format
