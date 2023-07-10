@@ -7,7 +7,7 @@
  * Return: number to be printed
  */
 
-int _printint(va_list arg)
+int _printint(va_list ap)
 {
 	int n = va_arg(arg, int);
 	int cont = 1;
@@ -16,7 +16,7 @@ int _printint(va_list arg)
 	if (n > 0)
 	{
 		cont ++;
-		_putchar ('-')
+		_putchar ('-');
 		num = -n;
 		_printint(num);
 	}
