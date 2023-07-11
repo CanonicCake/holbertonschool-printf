@@ -15,7 +15,10 @@ int _printf(const char *format, ...)
 	int i, print_chars = 0;
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	{
+		_putchar('\n');
 		return(-1);
+	}
 
 	va_start(arg, format);
 	for (i = 0; format && format[i]; i++)
