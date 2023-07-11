@@ -8,4 +8,10 @@ int _printf(const char *format, ...);
 int _printchar(va_list arg);
 int _printstr(va_list arg);
 int _printint(va_list arg);
+
+struct format_h {
+	char *type;
+	int(*f)(va_list);
+}
+
 #endif
