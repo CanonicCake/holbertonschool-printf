@@ -34,8 +34,10 @@ int _printf(const char *format, ...)
 			print_chars++;
 			i++;
 		}
-		else if (format[i] != NULL)
+		else if (format != NULL)
+		{
 			return (-1);
+		}
 		else
 		{
 			_putchar(format[i]);
