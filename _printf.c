@@ -12,22 +12,22 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i, print_chars = 0;
+	int i, print_chars = 0, prnt_frmt;
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return(-1);
 
 	va_start(arg, format);
-	for (i = 0; format && format[i]; i++)
+	i = 0;
+	while (format && format[i])
 	{
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			print_chars++;
+			i++;
+			prnt_frmt++;
+			return (prnt_frmt);
 		}
-		else if (format[i + 1] == '\0')
-			
-			return(1);
 
 		else if (format[i + 1] == '%')
 		{
