@@ -14,3 +14,8 @@ format prnt_frmt[]
         {NULL, NULL}
 }
 
+typedef struct format_h
+{
+        char *type;
+        int(*f)(va_list);
+}prnt_frmt;
