@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -33,6 +34,8 @@ int _printf(const char *format, ...)
 			print_chars++;
 			i++;
 		}
+		else if (format[i] != 'NULL')
+			return (-1);
 		else
 		{
 			_putchar(format[i]);
