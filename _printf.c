@@ -10,7 +10,11 @@
  */
 
 int _printf(const char *format, ...)
-	
+{
+	va_list arg;
+	int i, print_chars = 0;
+       	int prnt_frmt = 0;
+
 format prnt_frmt[]
 {
 	{"c", _printchar},
@@ -21,10 +25,6 @@ format prnt_frmt[]
 	{NULL, NULL}
 }
 
-{
-	va_list arg;
-	int i, print_chars = 0;
-       	int prnt_frmt = 0;
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return(-1);
@@ -35,26 +35,26 @@ format prnt_frmt[]
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
+			_putchar(prnt_frmt);
 			i++;
 			prnt_frmt++;
 			return (prnt_frmt);
+			
+			if (
 		}
 		else if (format[i + 1] == '\0')
 			return (1);
 
 		else if (format[i + 1] == '%')
 		{
-			_putchar(format[i]);
+			_putchar(prnt_frmt);
 			print_chars++;
 			i++;
 		}
 		else
 		{
-			_putchar(format[i]);
+			_putchar(prnt_frmt);
 			print_chars++;
-			char count ( += 1);
-			char count ( += 2);
 		}
 	}
 	va_end(arg);
