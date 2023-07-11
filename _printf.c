@@ -14,49 +14,39 @@ int _printf(const char *format, ...)
 	va_list arg;
 	int i, print_chars = 0;
        	int prnt_frmt = 0;
-
-format prnt_frmt[]
-{
-	{"c", _printchar},
-	{"s", _printstr},
-	{"%", _printperc},
-	{"d", _printint},
-	{"i", _printint},
-	{NULL, NULL}
-}
-
+	int counter;
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return(-1);
 
 	va_start(arg, format);
-	i = 0;
-	while (format != NULL)
+	for (i = 0; format[i]; i++)
 	{
-		if (format[i] != '%')
+		counter = 0;
+		while (counter != '%')
 		{
-			_putchar(prnt_frmt);
+			_putchar(c);
 			i++;
-			prnt_frmt++;
-			return (prnt_frmt);
-			
-			if (
+			counter++;
+			return (counter);
 		}
-		else if (format[i + 1] == '\0')
-			return (1);
+		if (format == %)
+		{
+			else if (format[i + 1] == '\0')
+				return (1);
 
-		else if (format[i + 1] == '%')
-		{
-			_putchar(prnt_frmt);
-			print_chars++;
-			i++;
+			else if (format[i + 1] == '%')
+			{
+				_putchar(prnt_frmt);
+				print_chars++;
+				i++;
+			}
+			else
+			{
+				_putchar(prnt_frmt);
+				print_chars++;
+			}
 		}
-		else
-		{
-			_putchar(prnt_frmt);
-			print_chars++;
-		}
-	}
 	va_end(arg);
 
 	return (print_chars);
