@@ -47,10 +47,10 @@ int _printstr(va_list arg)
 
 int _printperc(va_list arg)
 {
-	char '37' = va_arg (arg, int);
+	char % = 37;
 
-	_putchar ('37');
-	
+	_putchar(%);
+
 	va_end (arg);
 	return(1);
 }
