@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			print_chars++;
 			i++;
 		}
-		else if (format[i] != 'NULL')
+		else if (format[i] != NULL)
 			return (-1);
 		else
 		{
