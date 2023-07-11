@@ -10,6 +10,17 @@
  */
 
 int _printf(const char *format, ...)
+	
+format prnt_frmt[]
+{
+	{"c", _printchar},
+	{"s", _printstr},
+	{"%", _printperc},
+	{"d", _printint},
+	{"i", _printint},
+	{NULL, NULL}
+}
+
 {
 	va_list arg;
 	int i, print_chars = 0;
@@ -20,7 +31,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 	i = 0;
-	while (format && format[i])
+	while (format != NULL)
 	{
 		if (format[i] != '%')
 		{
@@ -42,6 +53,8 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			print_chars++;
+			char count ( += 1);
+			char count ( += 2);
 		}
 	}
 	va_end(arg);

@@ -14,5 +14,4 @@ typedef struct format_h
 	char *type;
 	int(*f)(va_list);
 }prnt_frmt;
-
 #endif

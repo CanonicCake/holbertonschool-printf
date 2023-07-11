@@ -37,4 +37,20 @@ int _printstr(va_list arg)
 		_putchar (string[i]);
 	va_end (arg);
 	return (i);
-}	
+}
+
+/**
+ * printprec - prints a %
+ * @arg: % to print
+ * Return: %
+ */
+
+int _printperc(va_list arg)
+{
+	char 37 = va_arg (arg, int);
+
+	_putchar (37);
+	
+	va_end (arg);
+	return(1);
+}
