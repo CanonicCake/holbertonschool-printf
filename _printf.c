@@ -11,43 +11,36 @@
 
 int _printf(const char *format, ...)
 {
-	va_list arg;
-	int i, print_chars = 0;
-       	int prnt_frmt = 0;
-	int counter;
+        va_list arg;
+        int i, print_chars = 0;
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return(-1);
+        if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+                return(-1);
 
-	va_start(arg, format);
-	for (i = 0; format[i]; i++)
-	{
-		counter = 0;
-		while (counter != '%')
-		{
-			_putchar(c);
-			i++;
-			counter++;
-			return (counter);
-		}
-		if (format == %)
-		{
-			else if (format[i + 1] == '\0')
-				return (1);
+        va_start(arg, format);
+        for (i=0; format && format[i]; i++)
+        {
+                if(format[i] != '%')
+                {
+                        _putchar(format[i]);
+                        print_chars++;
+                }
+                else if (format[i + 1] == '\0')
+                        return(-1);
 
-			else if (format[i + 1] == '%')
-			{
-				_putchar(prnt_frmt);
-				print_chars++;
-				i++;
-			}
-			else
-			{
-				_putchar(prnt_frmt);
-				print_chars++;
-			}
-		}
-	va_end(arg);
+                else if (format[i + 1] == '%')
+                {
+                        _putchar(format[i]);
+                        print_chars++;
+                        i++;
+                }
+                else
+                {
+                        _putchar(format[i]);
+                        print_chars++;
+                }
+        }
+        va_end(arg);
 
-	return (print_chars);
-} 
+        return (print_chars);
+}
