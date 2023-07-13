@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -47,9 +50,10 @@ int _printstr(va_list arg)
 
 int _printperc(va_list arg)
 {
-	char % = 37;
+	char perc = 37;
+	perc = va_arg (arg, int);
 
-	_putchar(%);
+	_putchar(perc);
 
 	va_end (arg);
 	return(1);
