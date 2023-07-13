@@ -1,4 +1,4 @@
-#include <stdio.h>
+u#include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
 #include "main.h"
@@ -9,6 +9,7 @@
  * Return: number of characters printed
  */
 int _printf(const char *format, ...)
+
 {
 	va_list arg;
 	int i, print_chars = 0;
@@ -34,11 +35,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			print_chars++;
 			i++;
-		}
-
-		else if(prnt_frmt(format[i + 1]) != NULL)
-		{
-			print_chars = print_chars +print_frmt(format[ i +])(arg);
 		}
 
 		else
