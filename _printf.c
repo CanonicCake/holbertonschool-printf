@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	int i, print_chars = 0;
-	int c = 0;
+	int c = 0, s = 0;
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
         return(-1);
@@ -47,11 +47,12 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == 's')
 		{
 			char *str = va_arg(arg, char*);
-			if (*str != NULL)
+			if (*str != '\0')
 			{
-				_putchar(*str);
-				*str++;
+				_putchar(s);
+				str++;
 				print_chars++;
+			}
 		}
 		else
   		{
