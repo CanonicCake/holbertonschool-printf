@@ -2,7 +2,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
-#inlcude <string.h>
+#include <string.h>
 
 format prnt_frmt[]
 {
