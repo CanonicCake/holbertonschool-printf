@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		else if (format[i + 1] == '\0')
 			return(-1);
 
-		else if (format[i] == '%')
+		else if (format[i + 1] == '%')
 		{
 			_putchar(format[i]);
 			print_chars++;
