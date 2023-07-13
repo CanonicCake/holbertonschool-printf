@@ -44,6 +44,15 @@ int _printf(const char *format, ...)
 			print_chars++;
 			i++;
 		}
+		else if (format[i + 1] == 's')
+		{
+			char *str = va_arg(arg, char*);
+			if (*str != NULL)
+			{
+				_putchar(*str);
+				*str++;
+				print_chars++;
+		}
 		else
   		{
  			_putchar(format[i]);
