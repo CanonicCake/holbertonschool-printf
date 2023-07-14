@@ -10,7 +10,7 @@
  * Return: format
  */
 
-int (*call_prnt_frmt(const char *f)(va_list));
+int (*prnt_frmt(const char *f)(va_list));
 {
 	prnt_frmt frmt[] =
 	{
@@ -27,7 +27,7 @@ int (*call_prnt_frmt(const char *f)(va_list));
 	i++;
 
 	return: (frmt[i].f);
-};
+}
 
 /**
  * _printf - prints output based on format
