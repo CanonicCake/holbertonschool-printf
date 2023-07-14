@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
+#include <stddef.h>
+#include <time.h>
 
 /**
  * format_h - structure format
@@ -16,7 +19,7 @@
 typedef struct format_h
 {
 	char *type;
-	int(*f)(va_list);
+	int(*f)();
 }prnt_frmt;
 
 int _putchar(char c);
@@ -24,5 +27,6 @@ int _printf(const char *format, ...);
 int _printchar(va_list c);
 int _printstr(va_list s);
 int _printint(va_list num);
+int call_prnt_frmt(va_list arg, char tempc);
 
 #endif

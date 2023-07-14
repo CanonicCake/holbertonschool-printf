@@ -10,25 +10,42 @@
  * Return: format
  */
 
-int (*prnt_frmt(const char *t)(va_list));
+int call_prnt_frmt(va_list arg, char tempc)
 {
 	prnt_frmt frmt[] =
 	{
-        	{"c", _printchar},
-        	{"s", _printstr},
-        	{"d", _printint},
-        	{"i", _printint},
-        	{NULL, NULL}
+		{"c", _printchar},
+		{"s", _printstr},
+		{"d", _printint},
+		{"i", _printint},
+		{"%", NULL},
+		{NULL, NULL}
 	};
-	int i = 0;
+	int i = 0, total = 0;
 
-	while (frmt[i].type != NULL && frmt[i].type[0] != t[0])
-
+	while (frmt[i].type != NULL)
 	{
-		i++;
+		if (tempc == *frmt[i].type)
+		{
+			total = frmt[i].f(arg);
+			return (total);
+		}
+		else
+		{
+			if (tempc == 37)
+			{
+				_putchar(37);
+				return (1);
+			}
+			else
+			{
+				_putchar(37);
+				_putchar(tempc);
+				return (2);
+			}
+		}
 	}
-
-	return: (frmt[i].f);
+	return (total);
 }
 
 /**
@@ -41,46 +58,36 @@ int _printf(const char *format, ...)
 
 {
 	va_list arg;
-	int i, print_chars = 0;
-	int c = 0;
+	unsigned int i = 0, print_chars = 0;
+	char tempc;
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-        return(-1);
+	if (format == NULL)
+        	return(-1);
 	
 	va_start(arg, format);
- 	for (i = 0; format && format[i]; i++)
+	
+	if (format[i] != '%')
 	{
-
-		if(format[i] != '%')
-        	{
-			_putchar(format[i]);
-			print_chars++;
-		}
-
-		else if (format[i + 1] == '\0')
-			return(-1);
-
-		else if (format[i + 1] == '%')
+		_putchar(format[i]);
+		print_chars++;
+	}
+	else
+	{
+		if (format[i + 1] == '%')
 		{
-			_putchar(format[i]);
-			print_chars++;
-			i++;
-		}
-		else if (format[i + 1] == 'c')
-		{
-			_putchar(c);
-			print_chars++;
-			i++;
-		}
-		else if (format[i + 1] == 's')
-		{
-			_printstr(arg);
+			_putchar(37), print_chars++;
 			i++;
 		}
 		else
-  		{
- 			_putchar(format[i]);
-			print_chars++;
+		{
+			tempc = format[i];
+			if (tempc == '%')
+			{
+				tempc = format[i + 1];
+				print_chars = call_prnt_frmt(arg, tempc);
+			}
+			i++;
+			return (tempc);
 		}
 	}
 	va_end(arg);
