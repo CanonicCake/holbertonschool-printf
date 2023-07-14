@@ -10,7 +10,7 @@
  * Return: format
  */
 
-int prnt_frmt(const char *f, ...)
+int (prnt_frmt(const char *f))(va_list)
 {
         {"c", _printchar},
         {"s", _printstr},
@@ -24,6 +24,7 @@ int prnt_frmt(const char *f, ...)
  * @format: format specifier
  * Return: number of characters printed
  */
+
 int _printf(const char *format, ...)
 
 {
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
         return(-1);
 	
 	va_start(arg, format);
- 	for (i=0; format && format[i]; i++)
+ 	for (i = 0; format && format[i]; i++)
 	{
 
 		if(format[i] != '%')
