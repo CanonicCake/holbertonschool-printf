@@ -5,6 +5,21 @@
 #include <unistd.h>
 
 /**
+ * prnt_format - calls a specific format
+ * 
+ * Return: format
+ */
+
+int format prnt_frmt[i + 1]
+{
+        {"c", _printchar},
+        {"s", _printstr},
+        {"d", _printint},
+        {"i", _printint},
+        {NULL, NULL}
+}
+
+/**
  * _printf - prints output based on format
  * @format: format specifier
  * Return: number of characters printed
