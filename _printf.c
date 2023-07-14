@@ -10,7 +10,7 @@
  * Return: format
  */
 
-int prnt_frmt(f + 1)(const char *f)
+int prnt_frmt((f + 1)(const char *f))
 {
         {"c", _printchar},
         {"s", _printstr},
