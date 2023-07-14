@@ -10,7 +10,7 @@
  * Return: format
  */
 
-int (call_prnt_frmt*(const char *f))(va_list)
+int ((call_prnt_frmt*)(const char *f))(va_list)
 {
         {"c", _printchar},
         {"s", _printstr},
