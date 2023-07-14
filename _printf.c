@@ -10,14 +10,24 @@
  * Return: format
  */
 
-int ((call_prnt_frmt)*)(const char *f))(va_list)
+int (*call_prnt_frmt(const char *f)(va_list));
 {
-        {"c", _printchar},
-        {"s", _printstr},
-        {"d", _printint},
-        {"i", _printint},
-        {NULL, NULL}
-}
+	prnt_frmt frmt[] =
+	{
+        	{"c", _printchar},
+        	{"s", _printstr},
+        	{"d", _printint},
+        	{"i", _printint},
+        	{NULL, NULL}
+	};
+	int i = 0;
+
+	while (frmt[i].type != NULL && frmt[i].type[0] != f[0])
+
+	i++;
+
+	return: (frmt[i].f);
+};
 
 /**
  * _printf - prints output based on format
