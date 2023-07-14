@@ -5,6 +5,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * format_h - structure format
+ * @char: returns a character
+ * @type: is the type of function
+ * @f: function that we passed
+ */
+
+
 typedef struct format_h
 {
 	char *type;
@@ -13,8 +21,8 @@ typedef struct format_h
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int _printchar(va_list arg);
-int _printstr(va_list arg);
-int _printint(va_list arg);
+int _printchar(va_list c);
+int _printstr(va_list s);
+int _printint(va_list num);
 
 #endif
