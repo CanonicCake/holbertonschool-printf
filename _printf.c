@@ -10,7 +10,7 @@
  * Return: format
  */
 
-int (*prnt_frmt(const char *f)(va_list));
+int (*prnt_frmt(const char *t)(va_list));
 {
 	prnt_frmt frmt[] =
 	{
@@ -22,9 +22,11 @@ int (*prnt_frmt(const char *f)(va_list));
 	};
 	int i = 0;
 
-	while (frmt[i].type != NULL && frmt[i].type[0] != f[0])
+	while (frmt[i].type != NULL && frmt[i].type[0] != t[0])
 
-	i++;
+	{
+		i++;
+	}
 
 	return: (frmt[i].f);
 }
