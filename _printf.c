@@ -10,7 +10,7 @@
  * Return: format
  */
 
-int format prnt_frmt[i + 1]
+int format; prnt_frmt[i + 1]
 {
         {"c", _printchar},
         {"s", _printstr},
