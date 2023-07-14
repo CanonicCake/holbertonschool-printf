@@ -17,7 +17,6 @@ int _printchar(va_list arg)
 
 	_putchar (c);
 
-	va_end(arg);
 	return (1);
 }
 
@@ -31,31 +30,12 @@ int _printchar(va_list arg)
 
 int _printstr(va_list arg)
 {
-	char *string = va_arg(arg, char*);
+	char *str = va_arg(arg, char *);
 	int i = 0;
 
-	if (string == NULL)
-		string = "null";
-	for (; string[i]; i++)
-		_putchar (string[i]);
-	va_end(arg);
+	if (str == NULL)
+		str = "null";
+	for (; str[i]; i++)
+		_putchar (str[i]);
 	return (i);
-}
-
-/**
- * _printperc - prints a %
- * @arg: % to print
- * Return: %
- */
-
-int _printperc(va_list arg)
-{
-	char perc = 37;
-
-	perc = va_arg(arg, int);
-
-	_putchar(perc);
-
-	va_end(arg);
-	return (1);
 }
