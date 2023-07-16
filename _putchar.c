@@ -19,28 +19,11 @@ int _putchar(char c)
  * Return: void
  */
 
-void _puts(char *str)
+int _puts(char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-}
-
-/**
- * _strlen - finds the length of a string to return
- * @str: the string
- *
- * Return: length
- */
-
-int _strlen(char *str)
-{
-	int length = 0;
-
-	while (*str++)
-	{
-		length++;
-	}
-	return (length);
+	return (i);
 }

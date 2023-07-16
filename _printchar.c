@@ -14,7 +14,7 @@
 
 int _printchar(va_list c)
 {
-	char ch = (char)va_arg(c, int);
+	char ch = va_arg(c, int);
 
 	_putchar (ch);
 
@@ -39,8 +39,7 @@ int _printstr(va_list s)
 	{
 		str = "(null)";
 	}
-	length = _strlen(str);
-	_puts(str);
+	length = _puts(str);
 	return (length);
 }
 
