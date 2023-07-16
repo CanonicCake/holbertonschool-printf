@@ -8,14 +8,15 @@
 /**
  * _printchar - prints a character
  * @arg: character to print
+ *
  * Return: character asked to print
  */
 
-int _printchar(va_list arg)
+int _printchar(va_list c)
 {
-	char c = va_arg(arg, int);
+	char ch = (char)va_arg(c, int);
 
-	_putchar (c);
+	_putchar (ch);
 
 	return (1);
 }
@@ -25,17 +26,21 @@ int _printchar(va_list arg)
 /**
  * _printstr - prints a string of characters
  * @arg: string to print
+ *
  * Return: characters in a string
  */
 
-int _printstr(va_list arg)
+int _printstr(va_list s)
 {
-	char *str = va_arg(arg, char *);
-	int i = 0;
+	char *str = va_arg(s, char *);
+	int length;
 
 	if (str == NULL)
-		str = "null";
-	for (; str[i]; i++)
-		_putchar (str[i]);
-	return (i);
+	{
+		str = "(null)";
+	}
+	length = _strlen(str);
+	_puts(str);
+	return (length);
 }
+
