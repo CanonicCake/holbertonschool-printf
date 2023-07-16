@@ -63,7 +63,7 @@ int _printf(const char *format, ...)
         	return(-1);
 	
 	va_start(arg, format);
-	while (format && format [i])
+	while (format && format[i])
 	{
 		if (format[i] != '%')
 		{
@@ -79,10 +79,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				tempc = format[i];
+				tempc = format[i + 1];
 				if (tempc == '%')
 				{
-					tempc = format[i + 1];
 					print_chars = call_prnt_frmt(arg, tempc);
 				}
 				i++;
@@ -93,4 +92,4 @@ int _printf(const char *format, ...)
 	}
 		va_end(arg);
 		return (print_chars);
-	}
+}
