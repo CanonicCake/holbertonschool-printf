@@ -80,12 +80,8 @@ int _printf(const char *format, ...)
 			else
 			{
 				tempc = format[i + 1];
-				if (tempc == '%')
-				{
-					print_chars = call_prnt_frmt(arg, tempc);
-				}
+				print_chars = call_prnt_frmt(arg, tempc);
 				i++;
-				return (tempc);
 			}
 		}
 		i++;
