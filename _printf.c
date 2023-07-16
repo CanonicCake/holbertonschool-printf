@@ -89,6 +89,7 @@ int _printf(const char *format, ...)
 				return (tempc);
 			}
 		}
+		i++;
 	}
 		va_end(arg);
 		return (print_chars);
