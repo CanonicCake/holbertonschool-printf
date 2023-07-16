@@ -63,31 +63,33 @@ int _printf(const char *format, ...)
         	return(-1);
 	
 	va_start(arg, format);
-	
-	if (format[i] != '%')
+	while (format && format [i])
 	{
-		_putchar(format[i]);
-		print_chars++;
-	}
-	else
-	{
-		if (format[i + 1] == '%')
+		if (format[i] != '%')
 		{
-			_putchar(37), print_chars++;
-			i++;
+			_putchar(format[i]);
+			print_chars++;
 		}
 		else
 		{
-			tempc = format[i];
-			if (tempc == '%')
+			if (format[i + 1] == '%')
 			{
-				tempc = format[i + 1];
-				print_chars = call_prnt_frmt(arg, tempc);
+				_putchar(37), print_chars++;
+				i++;
 			}
-			i++;
-			return (tempc);
+			else
+			{
+				tempc = format[i];
+				if (tempc == '%')
+				{
+					tempc = format[i + 1];
+					print_chars = call_prnt_frmt(arg, tempc);
+				}
+				i++;
+				return (tempc);
+			}
 		}
 	}
-	va_end(arg);
-	return (print_chars);
-}
+		va_end(arg);
+		return (print_chars);
+	}
