@@ -80,12 +80,12 @@ int _printf(const char *format, ...)
 			else
 			{
 				tempc = format[i + 1];
-				print_chars = call_prnt_frmt(arg, tempc);
+				print_chars += call_prnt_frmt(arg, tempc);
 				i++;
 			}
 		}
 		i++;
 	}
 	va_end(arg);
-	return (print_chars);
+	return (print_chars - 1);
 }
