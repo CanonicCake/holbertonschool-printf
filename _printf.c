@@ -76,9 +76,10 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				i++;
+				--i;
 				tempc = format[i + 1];
 				print_chars += call_prnt_frmt(arg, tempc);
+				i++;
 			}
 		}
 		i++;
