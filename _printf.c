@@ -69,17 +69,9 @@ int _printf(const char * const format, ...)
 		}
 		else
 		{
-			if (format[i + 1] == '%')
-			{
-				_putchar(37), print_chars++;
-				i++;
-			}
-			else
-			{
-				tempc = format[i + 1];
-				print_chars += call_prnt_frmt(arg, tempc);
-				i++;
-			}
+			tempc = format[i + 1];
+			print_chars += call_prnt_frmt(arg, tempc);
+			i++;
 		}
 		i++;
 	}
