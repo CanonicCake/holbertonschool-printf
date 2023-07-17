@@ -28,6 +28,7 @@ int _printchar(va_list c);
 int _printstr(va_list s);
 int _printint(va_list num);
 int call_prnt_frmt(va_list arg, char tempc);
-int _puts(char *str);
+void _puts(char *str);
+int _strlen(char *str);
 
 #endif

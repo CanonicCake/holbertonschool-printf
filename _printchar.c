@@ -39,7 +39,8 @@ int _printstr(va_list s)
 	{
 		str = "(null)";
 	}
-	length = _puts(str);
+	length = _strlen(str);
+	_puts(str);
 	return (length);
 }
 
