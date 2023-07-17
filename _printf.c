@@ -14,8 +14,8 @@ int call_prnt_frmt(va_list arg, char tempc)
 {
 	prnt_frmt frmt[] =
 	{
-		{"s", _printchar},
-		{"c", _printstr},
+		{"c", _printchar},
+		{"s", _printstr},
 		{"%", NULL},
 		{NULL, NULL}
 	};
