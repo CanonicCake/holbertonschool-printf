@@ -49,7 +49,7 @@ int call_prnt_frmt(va_list arg, char tempc)
  * Return: number of characters printed
  */
 
-int _printf(const char *format, ...)
+int _printf(const char * const format, ...)
 
 {
 	va_list arg;
@@ -76,7 +76,6 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				--i;
 				tempc = format[i + 1];
 				print_chars += call_prnt_frmt(arg, tempc);
 				i++;

@@ -23,7 +23,7 @@ typedef struct format_h
 }prnt_frmt;
 
 int _putchar(char c);
-int _printf(const char *format, ...);
+int _printf(const char * const format, ...);
 int _printchar(va_list c);
 int _printstr(va_list s);
 int _printint(va_list num);
