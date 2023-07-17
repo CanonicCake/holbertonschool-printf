@@ -28,21 +28,18 @@ int call_prnt_frmt(va_list arg, char tempc)
 			total = frmt[i].f(arg);
 			return (total);
 		}
+	}
+	if (tempc == 37)
+		{
+			_putchar(37);
+			return (1);
+		}
 		else
 		{
-			if (tempc == 37)
-			{
-				_putchar(37);
-				return (1);
-			}
-			else
-			{
-				_putchar(37);
-				_putchar(tempc);
-				return (2);
-			}
+			_putchar(37);
+			_putchar(tempc);
+			return (2);
 		}
-	}
 	return (total);
 }
 
