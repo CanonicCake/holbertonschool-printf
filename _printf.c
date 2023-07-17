@@ -30,10 +30,10 @@ int call_prnt_frmt(va_list arg, char tempc)
 		}
 	}
 	if (tempc == 37)
-		{
-			_putchar(37);
-			return (1);
-		}
+	{
+		_putchar(37);
+		return (1);
+	}
 	else
 	{
 		_putchar(37);
@@ -76,9 +76,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
+				i++;
 				tempc = format[i + 1];
 				print_chars += call_prnt_frmt(arg, tempc);
-				i++;
 			}
 		}
 		i++;
