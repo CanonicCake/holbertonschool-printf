@@ -84,5 +84,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(arg);
-	return (print_chars - 1);
+	return (print_chars);
 }
