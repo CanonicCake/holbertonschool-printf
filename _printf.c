@@ -26,7 +26,6 @@ int call_prnt_frmt(va_list arg, char tempc)
 		if (tempc == *frmt[i].type)
 		{
 			total = frmt[i].f(arg);
-			total++;
 			return (total);
 		}
 		i++;
