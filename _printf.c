@@ -28,6 +28,7 @@ int call_prnt_frmt(va_list arg, char tempc)
 			total = frmt[i].f(arg);
 			return (total);
 		}
+		i++;
 	}
 	if (tempc == 37)
 	{
