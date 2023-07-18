@@ -19,8 +19,8 @@
 typedef struct format_h
 {
 	char *type;
-	int(*f)();
-}prnt_frmt;
+	int (*f)();
+} prnt_frmt;
 
 int _putchar(char c);
 int _printf(const char * const format, ...);

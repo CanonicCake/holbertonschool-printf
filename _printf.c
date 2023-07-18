@@ -12,7 +12,7 @@
 
 int call_prnt_frmt(va_list arg, char tempc)
 {
-	prnt_frmt frmt[] ={
+	prnt_frmt frmt[] = {
 		{"c", _printchar},
 		{"s", _printstr},
 		{NULL, NULL}
@@ -52,7 +52,7 @@ int _printf(const char * const format, ...)
 	char tempc;
 
 	if (format == NULL)
-        	return(-1);
+        	return (-1);
 
 	va_start(arg, format);
 	while (format && format[i])
