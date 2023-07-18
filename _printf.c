@@ -33,6 +33,8 @@ int call_prnt_frmt(va_list arg, char tempc)
 		_putchar(37);
 		return (1);
 	}
+	else
+		return (-1);
 	_putchar(37);
 	_putchar(tempc);
 	return (2);
