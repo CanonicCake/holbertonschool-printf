@@ -20,11 +20,6 @@ int call_prnt_frmt(va_list arg, char tempc)
 	};
 	int i = 0, total = 0;
 
-	if (tempc == 37)
-	{
-		_putchar(37);
-		return (1);
-	}
 	while (frmt[i].type != NULL)
 	{
 		if (tempc == *frmt[i].type)
@@ -33,6 +28,11 @@ int call_prnt_frmt(va_list arg, char tempc)
 			return (total);
 		}
 		i++;
+	}
+	if (tempc == 37)
+	{
+		_putchar(37);
+		return (1);
 	}
 	_putchar(37);
 	_putchar(tempc);
