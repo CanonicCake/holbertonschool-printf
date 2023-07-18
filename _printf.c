@@ -23,7 +23,7 @@ int call_prnt_frmt(va_list arg, char tempc)
 	if (tempc == 37)
 	{
 		_putchar(37);
-		return (0);
+		return (1);
 	}
 	while (frmt[i].type != NULL)
 	{
@@ -63,6 +63,8 @@ int _printf(const char * const format, ...)
 			_putchar(format[i]);
 			print_chars++;
 		}
+		else if (format[i] == '%')
+			return (0);
 		else
 		{
 			tempc = format[i + 1];
