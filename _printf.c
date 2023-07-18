@@ -16,32 +16,27 @@ int call_prnt_frmt(va_list arg, char tempc)
 	{
 		{"c", _printchar},
 		{"s", _printstr},
-		{"%", NULL},
 		{NULL, NULL}
 	};
 	int i = 0, total = 0;
 
+	if (tempc == 37)
+	{
+		_putchar(37);
+		return (1);
+	}
 	while (frmt[i].type != NULL)
 	{
 		if (tempc == *frmt[i].type)
 		{
-			if (tempc == 37)
-			{
-			_putchar(37);
-			return (1);
-			}
-			else
-			{
-				_putchar(37);
-				_putchar(tempc);
-				return (2);
-			}
 			total = frmt[i].f(arg);
 			return (total);
 		}
 		i++;
 	}
-	return (total);
+	_putchar(37);
+	_putchar(tempc);
+	return (2);
 }
 
 /**
