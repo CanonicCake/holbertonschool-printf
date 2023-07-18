@@ -63,8 +63,6 @@ int _printf(const char * const format, ...)
 			_putchar(format[i]);
 			print_chars++;
 		}
-		else if (format[i] == '%')
-			return (0);
 		else
 		{
 			tempc = format[i + 1];
