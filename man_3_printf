@@ -1,0 +1,15 @@
+	Date:
+	Created - 07/2023
+
+	Authors:
+	Pilar Thornbrugh
+	Nathan Ellis
+
+	Functions:
+	* _printf - Allows for the ("") to print out what is inside while checking for the special character functions		that will allow _printf to read what is described in the declaration section (i.e ("%c", "c"))
+
+	* %c - Sees a function to print a character.
+
+	* %s - Finds a string to return, and prints.
+
+	* %% - A simple way to print out a % character.
