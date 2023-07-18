@@ -23,7 +23,7 @@ int call_prnt_frmt(va_list arg, char tempc)
 	if (tempc == 37)
 	{
 		_putchar(37);
-		return (1);
+		return (0);
 	}
 	while (frmt[i].type != NULL)
 	{
