@@ -34,8 +34,9 @@ int call_prnt_frmt(va_list arg, char tempc)
 		}
 		i++;
 	}
+	_putchar(37);
 	_putchar(tempc);
-	return (2);
+	return (1);
 }
 
 /**
